@@ -1,0 +1,407 @@
+[
+  {
+    "input": "data/images/image_0001.tiff",
+    "fft_only": "outputs/all_transforms/fft_only/0001_image_0001_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0001_image_0001_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0002.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0002_image_0002_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0002_image_0002_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0003.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0003_image_0003_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0003_image_0003_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0004.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0004_image_0004_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0004_image_0004_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0005.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0005_image_0005_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0005_image_0005_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0006.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0006_image_0006_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0006_image_0006_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0007.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0007_image_0007_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0007_image_0007_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0008.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0008_image_0008_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0008_image_0008_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0009.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0009_image_0009_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0009_image_0009_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0010.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0010_image_0010_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0010_image_0010_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0011.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0011_image_0011_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0011_image_0011_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0012.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0012_image_0012_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0012_image_0012_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0013.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0013_image_0013_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0013_image_0013_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0014.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0014_image_0014_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0014_image_0014_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0015.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0015_image_0015_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0015_image_0015_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0016.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0016_image_0016_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0016_image_0016_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0017.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0017_image_0017_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0017_image_0017_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0018.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0018_image_0018_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0018_image_0018_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0019.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0019_image_0019_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0019_image_0019_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0020.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0020_image_0020_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0020_image_0020_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0021.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0021_image_0021_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0021_image_0021_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0022.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0022_image_0022_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0022_image_0022_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0023.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0023_image_0023_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0023_image_0023_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0024.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0024_image_0024_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0024_image_0024_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0025.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0025_image_0025_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0025_image_0025_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0026.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0026_image_0026_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0026_image_0026_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0027.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0027_image_0027_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0027_image_0027_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0028.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0028_image_0028_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0028_image_0028_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0029.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0029_image_0029_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0029_image_0029_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0030.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0030_image_0030_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0030_image_0030_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0031.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0031_image_0031_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0031_image_0031_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0032.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0032_image_0032_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0032_image_0032_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0033.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0033_image_0033_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0033_image_0033_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0034.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0034_image_0034_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0034_image_0034_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0035.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0035_image_0035_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0035_image_0035_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0036.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0036_image_0036_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0036_image_0036_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0037.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0037_image_0037_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0037_image_0037_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0038.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0038_image_0038_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0038_image_0038_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0039.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0039_image_0039_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0039_image_0039_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0040.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0040_image_0040_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0040_image_0040_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0041.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0041_image_0041_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0041_image_0041_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0042.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0042_image_0042_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0042_image_0042_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0043.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0043_image_0043_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0043_image_0043_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0044.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0044_image_0044_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0044_image_0044_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0045.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0045_image_0045_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0045_image_0045_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0046.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0046_image_0046_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0046_image_0046_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0047.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0047_image_0047_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0047_image_0047_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0048.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0048_image_0048_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0048_image_0048_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0049.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0049_image_0049_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0049_image_0049_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0050.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0050_image_0050_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0050_image_0050_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0051.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0051_image_0051_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0051_image_0051_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0052.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0052_image_0052_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0052_image_0052_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0053.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0053_image_0053_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0053_image_0053_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0054.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0054_image_0054_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0054_image_0054_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0055.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0055_image_0055_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0055_image_0055_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0056.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0056_image_0056_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0056_image_0056_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0057.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0057_image_0057_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0057_image_0057_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0058.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0058_image_0058_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0058_image_0058_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0059.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0059_image_0059_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0059_image_0059_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0060.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0060_image_0060_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0060_image_0060_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0061.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0061_image_0061_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0061_image_0061_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0062.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0062_image_0062_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0062_image_0062_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0063.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0063_image_0063_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0063_image_0063_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0064.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0064_image_0064_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0064_image_0064_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0065.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0065_image_0065_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0065_image_0065_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0066.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0066_image_0066_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0066_image_0066_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0067.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0067_image_0067_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0067_image_0067_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0068.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0068_image_0068_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0068_image_0068_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0069.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0069_image_0069_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0069_image_0069_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0070.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0070_image_0070_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0070_image_0070_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0071.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0071_image_0071_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0071_image_0071_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0072.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0072_image_0072_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0072_image_0072_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0073.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0073_image_0073_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0073_image_0073_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0074.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0074_image_0074_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0074_image_0074_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0075.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0075_image_0075_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0075_image_0075_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0076.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0076_image_0076_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0076_image_0076_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0077.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0077_image_0077_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0077_image_0077_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0078.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0078_image_0078_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0078_image_0078_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0079.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0079_image_0079_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0079_image_0079_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0080.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0080_image_0080_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0080_image_0080_side_by_side.png"
+  },
+  {
+    "input": "data/images/image_0081.jpg",
+    "fft_only": "outputs/all_transforms/fft_only/0081_image_0081_fft.png",
+    "side_by_side": "outputs/all_transforms/side_by_side/0081_image_0081_side_by_side.png"
+  }
+]

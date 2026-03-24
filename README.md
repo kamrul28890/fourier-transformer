@@ -51,6 +51,18 @@ Batch outputs:
 - `outputs/all_transforms/side_by_side/`
 - `outputs/all_transforms/transform_manifest.json`
 
+### 1c) Annotated side-by-side for all images (with explanation text)
+
+```bash
+PYTHONPATH=src python -m fourier_traits.cli explain-all \
+  --images-dir data/images \
+  --out-dir outputs/explained_transforms
+```
+
+Annotated outputs:
+- `outputs/explained_transforms/annotated_side_by_side/`
+- `outputs/explained_transforms/fft_reasoning_table.csv`
+
 ### 2) Download online image dataset
 
 Wikimedia source (query-based):

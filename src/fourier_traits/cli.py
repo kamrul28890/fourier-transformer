@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 from pathlib import Path
 
@@ -8,7 +9,9 @@ from .analysis import analysis_result_to_dict, analyze_image_folder
 from .dataset import fetch_dataset_from_picsum, fetch_dataset_from_wikimedia
 from .fourier import (
     compute_fft_spectrum,
+    extract_fft_features,
     load_grayscale_image,
+    save_annotated_side_by_side,
     save_fft_only,
     save_side_by_side,
 )
@@ -88,6 +91,103 @@ def cmd_transform_all(args: argparse.Namespace) -> None:
     )
 
 
+def _reason_from_features(low: float, mid: float, high: float, anisotropy: float, centroid: float) -> str:
+    parts: list[str] = []
+
+    if low >= 0.82:
+        parts.append("Very center-heavy spectrum, so the image is mostly smooth with limited fine detail.")
+    elif high >= 0.10:
+        parts.append("Stronger outer-frequency energy indicates sharper edges or fine textures.")
+    else:
+        parts.append("Balanced low and mid frequencies suggest moderate detail without extreme sharpness.")
+
+    if anisotropy >= 1.55:
+        parts.append("Directional frequency bias is high, indicating oriented structures or texture.")
+    else:
+        parts.append("Frequency energy is fairly isotropic, so structure is less direction-specific.")
+
+    if centroid >= 26:
+        parts.append("Higher spectral centroid confirms comparatively more high-frequency content.")
+    else:
+        parts.append("Lower spectral centroid confirms energy concentrated near low frequencies.")
+
+    return " ".join(parts)
+
+
+def cmd_explain_all(args: argparse.Namespace) -> None:
+    image_paths = _iter_images(args.images_dir)
+    if not image_paths:
+        raise ValueError(f"No images found under: {args.images_dir}")
+
+    out_dir = Path(args.out_dir)
+    annotated_dir = out_dir / "annotated_side_by_side"
+    annotated_dir.mkdir(parents=True, exist_ok=True)
+    csv_path = out_dir / "fft_reasoning_table.csv"
+
+    rows: list[dict[str, str]] = []
+    for idx, image_path in enumerate(image_paths, start=1):
+        image = load_grayscale_image(image_path)
+        _, log_magnitude = compute_fft_spectrum(image)
+        feats = extract_fft_features(image)
+
+        reason = _reason_from_features(
+            low=feats.low_energy_ratio,
+            mid=feats.mid_energy_ratio,
+            high=feats.high_energy_ratio,
+            anisotropy=feats.anisotropy,
+            centroid=feats.spectral_centroid,
+        )
+
+        out_path = annotated_dir / f"{idx:04d}_{image_path.stem}_annotated.png"
+        save_annotated_side_by_side(
+            image=image,
+            log_magnitude=log_magnitude,
+            reason_text=reason,
+            output_path=out_path,
+        )
+
+        rows.append(
+            {
+                "input_image": str(image_path),
+                "annotated_output": str(out_path),
+                "low_energy_ratio": f"{feats.low_energy_ratio:.6f}",
+                "mid_energy_ratio": f"{feats.mid_energy_ratio:.6f}",
+                "high_energy_ratio": f"{feats.high_energy_ratio:.6f}",
+                "spectral_centroid": f"{feats.spectral_centroid:.6f}",
+                "anisotropy": f"{feats.anisotropy:.6f}",
+                "reason": reason,
+            }
+        )
+
+    with csv_path.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(
+            f,
+            fieldnames=[
+                "input_image",
+                "annotated_output",
+                "low_energy_ratio",
+                "mid_energy_ratio",
+                "high_energy_ratio",
+                "spectral_centroid",
+                "anisotropy",
+                "reason",
+            ],
+        )
+        writer.writeheader()
+        writer.writerows(rows)
+
+    print(
+        json.dumps(
+            {
+                "images_processed": len(rows),
+                "annotated_dir": str(annotated_dir),
+                "reasoning_table": str(csv_path),
+            },
+            indent=2,
+        )
+    )
+
+
 def cmd_fetch(args: argparse.Namespace) -> None:
     if args.source == "wikimedia":
         if not args.query:
@@ -140,6 +240,14 @@ def build_parser() -> argparse.ArgumentParser:
     transform_all.add_argument("--images-dir", required=True, help="Folder containing input images")
     transform_all.add_argument("--out-dir", default="outputs/all_transforms", help="Directory for batch outputs")
     transform_all.set_defaults(func=cmd_transform_all)
+
+    explain_all = sub.add_parser(
+        "explain-all",
+        help="Generate annotated side-by-side images with per-image Fourier reasoning",
+    )
+    explain_all.add_argument("--images-dir", required=True, help="Folder containing input images")
+    explain_all.add_argument("--out-dir", default="outputs/explained_transforms", help="Directory for annotated outputs")
+    explain_all.set_defaults(func=cmd_explain_all)
 
     fetch = sub.add_parser("fetch", help="Download an online image dataset from Wikimedia")
     fetch.add_argument("--source", choices=["wikimedia", "picsum"], default="wikimedia", help="Online photo source")

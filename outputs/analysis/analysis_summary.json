@@ -1,0 +1,66 @@
+{
+  "images_analyzed": 81,
+  "feature_count": 69,
+  "cluster_count": 6,
+  "silhouette_score": 0.24489499628543854,
+  "pca_explained_variance_ratio": [
+    0.8632814884185791,
+    0.07275282591581345
+  ],
+  "cluster_traits": [
+    {
+      "cluster": 0,
+      "image_count": 17,
+      "mean_low_energy": 0.9838712530977586,
+      "mean_mid_energy": 0.013578748659175984,
+      "mean_high_energy": 0.00254998858744169,
+      "mean_centroid": 2.1435038692810955,
+      "mean_anisotropy": 1.6544130479588228
+    },
+    {
+      "cluster": 1,
+      "image_count": 1,
+      "mean_low_energy": 0.9020397067070007,
+      "mean_mid_energy": 0.0768408551812172,
+      "mean_high_energy": 0.02111942693591118,
+      "mean_centroid": 10.84352970123291,
+      "mean_anisotropy": 1.0258153676986694
+    },
+    {
+      "cluster": 2,
+      "image_count": 28,
+      "mean_low_energy": 0.9964114895888737,
+      "mean_mid_energy": 0.003132829582942317,
+      "mean_high_energy": 0.00045567787310574204,
+      "mean_centroid": 0.6339286267757416,
+      "mean_anisotropy": 2.880576627595084
+    },
+    {
+      "cluster": 3,
+      "image_count": 12,
+      "mean_low_energy": 0.9729175815979639,
+      "mean_mid_energy": 0.023585268761962652,
+      "mean_high_energy": 0.0034971540881088004,
+      "mean_centroid": 3.474637985229492,
+      "mean_anisotropy": 1.635739912589391
+    },
+    {
+      "cluster": 4,
+      "image_count": 22,
+      "mean_low_energy": 0.9911169030449607,
+      "mean_mid_energy": 0.007681891629049046,
+      "mean_high_energy": 0.0012011993160492486,
+      "mean_centroid": 1.4905770095911892,
+      "mean_anisotropy": 2.0575754750858652
+    },
+    {
+      "cluster": 5,
+      "image_count": 1,
+      "mean_low_energy": 0.931984007358551,
+      "mean_mid_energy": 0.05410817638039589,
+      "mean_high_energy": 0.013907811604440212,
+      "mean_centroid": 7.68781852722168,
+      "mean_anisotropy": 1.028247356414795
+    }
+  ]
+}

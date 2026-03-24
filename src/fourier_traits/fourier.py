@@ -164,3 +164,87 @@ def save_side_by_side(image: np.ndarray, log_magnitude: np.ndarray, output_path:
     fig.tight_layout()
     fig.savefig(output_path, dpi=180)
     plt.close(fig)
+
+
+def _to_spectrum_bgr(log_magnitude: np.ndarray) -> np.ndarray:
+    normalized = cv2.normalize(log_magnitude, None, 0, 255, cv2.NORM_MINMAX)
+    spectrum_u8 = normalized.astype(np.uint8)
+    return cv2.applyColorMap(spectrum_u8, cv2.COLORMAP_MAGMA)
+
+
+def _wrap_text(
+    text: str,
+    max_pixel_width: int,
+    font_face: int,
+    font_scale: float,
+    thickness: int,
+) -> list[str]:
+    words = text.split()
+    if not words:
+        return [""]
+
+    lines: list[str] = []
+    current = words[0]
+    for word in words[1:]:
+        candidate = f"{current} {word}"
+        candidate_w, _ = cv2.getTextSize(candidate, font_face, font_scale, thickness)[0]
+        if candidate_w <= max_pixel_width:
+            current = candidate
+        else:
+            lines.append(current)
+            current = word
+    lines.append(current)
+    return lines
+
+
+def save_annotated_side_by_side(
+    image: np.ndarray,
+    log_magnitude: np.ndarray,
+    reason_text: str,
+    output_path: str | Path,
+) -> None:
+    output_path = Path(output_path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    left = cv2.cvtColor(image, cv2.COLOR_GRAY2BGR)
+    right = _to_spectrum_bgr(log_magnitude)
+
+    h, w = left.shape[:2]
+    combined = np.hstack([left, right])
+
+    font_face = cv2.FONT_HERSHEY_SIMPLEX
+    title_scale = 0.65
+    title_thickness = 2
+    body_scale = 0.55
+    body_thickness = 1
+
+    max_text_w = 2 * w - 32
+    reason_lines = _wrap_text(
+        text=reason_text,
+        max_pixel_width=max_text_w,
+        font_face=font_face,
+        font_scale=body_scale,
+        thickness=body_thickness,
+    )
+
+    line_step = 24
+    panel_top_padding = 28
+    panel_bottom_padding = 18
+    reason_header_gap = 30
+    panel_h = panel_top_padding + reason_header_gap + line_step * len(reason_lines) + panel_bottom_padding
+
+    canvas = np.full((h + panel_h, 2 * w, 3), 245, dtype=np.uint8)
+    canvas[:h, : 2 * w] = combined
+
+    cv2.putText(canvas, "Before (image)", (16, 24), font_face, title_scale, (20, 20, 20), title_thickness)
+    cv2.putText(canvas, "After (FFT)", (w + 16, 24), font_face, title_scale, (20, 20, 20), title_thickness)
+
+    cv2.line(canvas, (0, h), (2 * w, h), (180, 180, 180), 2)
+    cv2.putText(canvas, "Reason:", (16, h + 28), font_face, 0.62, (30, 30, 30), 2)
+
+    y = h + 58
+    for line in reason_lines:
+        cv2.putText(canvas, line, (16, y), font_face, body_scale, (45, 45, 45), body_thickness, cv2.LINE_AA)
+        y += 24
+
+    cv2.imwrite(str(output_path), canvas)

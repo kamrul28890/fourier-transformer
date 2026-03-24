@@ -21,6 +21,3 @@ dist/
 # OS
 .DS_Store
 
-# Data/outputs (optional, keep repo lean)
-data/images/
-outputs/
