@@ -38,6 +38,19 @@ Output image:
 - `outputs/single/single_fft_only.png`
 - `outputs/single/single_fft_side_by_side.png`
 
+### 1b) Fourier transform for all images in a folder
+
+```bash
+PYTHONPATH=src python -m fourier_traits.cli transform-all \
+  --images-dir data/images \
+  --out-dir outputs/all_transforms
+```
+
+Batch outputs:
+- `outputs/all_transforms/fft_only/`
+- `outputs/all_transforms/side_by_side/`
+- `outputs/all_transforms/transform_manifest.json`
+
 ### 2) Download online image dataset
 
 Wikimedia source (query-based):

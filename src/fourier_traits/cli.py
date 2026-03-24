@@ -14,6 +14,12 @@ from .fourier import (
 )
 
 
+def _iter_images(folder: str | Path) -> list[Path]:
+    folder = Path(folder)
+    exts = {".jpg", ".jpeg", ".png", ".bmp", ".tif", ".tiff", ".webp"}
+    return sorted([p for p in folder.rglob("*") if p.suffix.lower() in exts])
+
+
 def cmd_single(args: argparse.Namespace) -> None:
     image = load_grayscale_image(args.image)
     _, log_magnitude = compute_fft_spectrum(image)
@@ -30,6 +36,52 @@ def cmd_single(args: argparse.Namespace) -> None:
             {
                 "saved_fft_only": str(fft_only_path),
                 "saved_side_by_side": str(side_by_side_path),
+            },
+            indent=2,
+        )
+    )
+
+
+def cmd_transform_all(args: argparse.Namespace) -> None:
+    image_paths = _iter_images(args.images_dir)
+    if not image_paths:
+        raise ValueError(f"No images found under: {args.images_dir}")
+
+    out_dir = Path(args.out_dir)
+    fft_only_dir = out_dir / "fft_only"
+    side_by_side_dir = out_dir / "side_by_side"
+    fft_only_dir.mkdir(parents=True, exist_ok=True)
+    side_by_side_dir.mkdir(parents=True, exist_ok=True)
+
+    outputs: list[dict[str, str]] = []
+    for idx, image_path in enumerate(image_paths, start=1):
+        image = load_grayscale_image(image_path)
+        _, log_magnitude = compute_fft_spectrum(image)
+
+        stem = image_path.stem
+        fft_only_path = fft_only_dir / f"{idx:04d}_{stem}_fft.png"
+        side_by_side_path = side_by_side_dir / f"{idx:04d}_{stem}_side_by_side.png"
+
+        save_fft_only(log_magnitude=log_magnitude, output_path=fft_only_path)
+        save_side_by_side(image=image, log_magnitude=log_magnitude, output_path=side_by_side_path)
+
+        outputs.append(
+            {
+                "input": str(image_path),
+                "fft_only": str(fft_only_path),
+                "side_by_side": str(side_by_side_path),
+            }
+        )
+
+    manifest_path = out_dir / "transform_manifest.json"
+    manifest_path.write_text(json.dumps(outputs, indent=2))
+    print(
+        json.dumps(
+            {
+                "images_processed": len(outputs),
+                "fft_only_dir": str(fft_only_dir),
+                "side_by_side_dir": str(side_by_side_dir),
+                "manifest": str(manifest_path),
             },
             indent=2,
         )
@@ -83,6 +135,11 @@ def build_parser() -> argparse.ArgumentParser:
     single.add_argument("--image", required=True, help="Path to an image file")
     single.add_argument("--out-dir", default="outputs/single", help="Directory for output images")
     single.set_defaults(func=cmd_single)
+
+    transform_all = sub.add_parser("transform-all", help="Compute Fourier transform outputs for all images in a folder")
+    transform_all.add_argument("--images-dir", required=True, help="Folder containing input images")
+    transform_all.add_argument("--out-dir", default="outputs/all_transforms", help="Directory for batch outputs")
+    transform_all.set_defaults(func=cmd_transform_all)
 
     fetch = sub.add_parser("fetch", help="Download an online image dataset from Wikimedia")
     fetch.add_argument("--source", choices=["wikimedia", "picsum"], default="wikimedia", help="Online photo source")
