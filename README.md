@@ -35,14 +35,28 @@ PYTHONPATH=src python -m fourier_traits.cli single \
 ```
 
 Output image:
-- `outputs/single/single_fft_visualization.png`
+- `outputs/single/single_fft_only.png`
+- `outputs/single/single_fft_side_by_side.png`
 
 ### 2) Download online image dataset
 
+Wikimedia source (query-based):
+
 ```bash
 PYTHONPATH=src python -m fourier_traits.cli fetch \
+  --source wikimedia \
   --query "street photography" \
   --limit 150 \
+  --out-dir data/images
+```
+
+Picsum source (random photos, usually better for larger batches):
+
+```bash
+PYTHONPATH=src python -m fourier_traits.cli fetch \
+  --source picsum \
+  --limit 150 \
+  --size 512 \
   --out-dir data/images
 ```
 

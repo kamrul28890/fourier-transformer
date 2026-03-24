@@ -135,17 +135,30 @@ def extract_fft_features(image: np.ndarray, bins: int = 64) -> FourierFeatureSet
     )
 
 
-def save_fft_visualization(image: np.ndarray, log_magnitude: np.ndarray, output_path: str | Path) -> None:
+def save_fft_only(log_magnitude: np.ndarray, output_path: str | Path) -> None:
+    output_path = Path(output_path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    fig, ax = plt.subplots(figsize=(6, 6))
+    ax.imshow(log_magnitude, cmap="magma")
+    ax.set_title("Log magnitude spectrum")
+    ax.axis("off")
+    fig.tight_layout()
+    fig.savefig(output_path, dpi=180)
+    plt.close(fig)
+
+
+def save_side_by_side(image: np.ndarray, log_magnitude: np.ndarray, output_path: str | Path) -> None:
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     fig, axes = plt.subplots(1, 2, figsize=(12, 5))
     axes[0].imshow(image, cmap="gray")
-    axes[0].set_title("Input image")
+    axes[0].set_title("Before (input image)")
     axes[0].axis("off")
 
     axes[1].imshow(log_magnitude, cmap="magma")
-    axes[1].set_title("Log magnitude spectrum")
+    axes[1].set_title("After (Fourier magnitude)")
     axes[1].axis("off")
 
     fig.tight_layout()
